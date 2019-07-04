@@ -58,7 +58,6 @@ PS1+='$(RET=$?; if [ $RET != 0 ] ; then echo -e "\n\[\e[43m\]\[\e[30m\]\$?: ${RE
 ## Show Date and Time on own line in blue:
 PS1+='\n\[\e[34m\]$(date --rfc-3339=s)'
 
-
 if [ "$includeUptimeStats" == "true" ]; then
 	# ... followed by the uptime and number of users:
 	#PS1+='  $(uptime | sed '\''s/^.* \(up \+.\+, \+[0-9]+ users\?\).*$/\1/'\'')'
@@ -85,7 +84,6 @@ PS1+='\]\u@\h\[\e[0m\]:\[\e[33m\]\w\[\e[0m\]'
 PS1+='\n\$ '
 
 # https://unix.stackexchange.com/questions/379181/escape-a-variable-for-use-as-content-of-another-script
-
 q_mid=\'\\\'\'
 PS1_esc="'${PS1//\'/$q_mid}'"
 
