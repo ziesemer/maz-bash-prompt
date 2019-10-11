@@ -25,7 +25,7 @@ Advantages of the last:
 2. Command entry always starts at the same column (3) - regardless of the length of the current path (`$PWD`).
 3. Provides clear separation between commands - due to both the color and the newline before each prompt, as well as adding distinction between the prompt and the command entry.
 4. Follows the same semantics already set by default in `$PROMPT_COMMAND` to set the window title.
-5. Makes it easiy to use SCP, rsync, etc., between hosts - as the prompt follows the identical semantics required by these programs, allowing for this portion to be simply copied & pasted:
+5. Makes it easier to use SCP, rsync, etc., between hosts - as the prompt follows the identical semantics required by these programs, allowing for this portion to be simply copied & pasted:
 
 		[[user@]host1:]file1
 
