@@ -48,10 +48,10 @@ Continue reading below for the full version.  However, for a basic version as a 
 	mark@localhost:~
 	$
 
-1. The first line (as shown) displays the return code from the last commmand, but only if non-zero.
+1. The first line (as shown) displays the return code from the last command, but only if non-zero.
 	1. This is shown on its own line, using black test on a yellow background.
 	2. Typically this is something that needs attention, as it usually means the previous command returned something other than a "success".
-	3. A similiar approach for this is further detailed at <https://blog.superuser.com/2011/09/21/customizing-your-bash-command-prompt/>.
+	3. A similar approach for this is further detailed at <https://blog.superuser.com/2011/09/21/customizing-your-bash-command-prompt/>.
 2. The next line shows in blue (low contrast, as to not be too obtrusive):
 	1. The current date and time.
 		1. Helpful for keeping track of how long commands took to execute - and when looking back, when they were executed.
