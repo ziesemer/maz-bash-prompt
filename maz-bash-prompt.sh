@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Mark A. Ziesemer, 2016-01-01, 2018-05-06
+# Mark A. Ziesemer, 2016-01-01, 2025-01-04
 
 # Inspiration:
 # - http://blog.superuser.com/2011/09/21/customizing-your-bash-command-prompt/
@@ -15,7 +15,7 @@ fi
 PS1=''
 includeUptimeStats=auto
 
-while [ "${1:-}" != "" ]; do
+while [ "${1:-}" != '' ]; do
 	case "$1" in
 		'--includeUptimeStats')
 			if [ -n "${2:-}" ]; then
@@ -29,7 +29,7 @@ while [ "${1:-}" != "" ]; do
 	shift
 done
 
-if [ "$includeUptimeStats" == "auto" ]; then
+if [ "$includeUptimeStats" == 'auto' ]; then
 	# Cygwin: "uptime" is available in procps-ng, but at least as of 2018-05-06,
 	#   is at least 50x slower than in native implementations - so skip for now.
 	#   (100 iterations on Cygwin = 23.153s, CentOS 7 VM = 0.333s.)
@@ -58,7 +58,7 @@ PS1+='$(RET=$?; if [ $RET != 0 ] ; then echo -e "\n\[\e[43m\]\[\e[30m\]\$?: ${RE
 ## Show Date and Time on own line in blue:
 PS1+='\n\[\e[34m\]$(date --rfc-3339=s)'
 
-if [ "$includeUptimeStats" == "true" ]; then
+if [ "$includeUptimeStats" == 'true' ]; then
 	# ... followed by the uptime and number of users:
 	#PS1+='  $(uptime | sed '\''s/^.* \(up \+.\+, \+[0-9]+ users\?\).*$/\1/'\'')'
 	PS1+=$'  $(pat=\'^.* (up +.+, +[0-9]+ users?).*$\'; if [[ $(uptime) =~ $pat ]]; then echo "${BASH_REMATCH[1]}"; fi)'
@@ -83,7 +83,7 @@ PS1+='\]\u@\h\[\e[0m\]:\[\e[33m\]\w\[\e[0m\]'
 # (Bash will automatically substitute a '#' for the '$' for the root user.)
 PS1+='\n\$ '
 
-# https://unix.stackexchange.com/questions/379181/escape-a-variable-for-use-as-content-of-another-script
+# - https://unix.stackexchange.com/questions/379181/escape-a-variable-for-use-as-content-of-another-script
 q_mid=\'\\\'\'
 PS1_esc="'${PS1//\'/$q_mid}'"
 
